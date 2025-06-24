@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Текущее значение счетчика"
+        android:fontFamily="@font/permanent_marker"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/counterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="24sp"
+        android:fontFamily="@font/permanent_marker"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/decrementButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textAllCaps="false"
+            android:fontFamily="@font/permanent_marker"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/incrementButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textAllCaps="false"
+            android:fontFamily="@font/permanent_marker"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/getRandomNumberButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Получить число"
+        android:textAllCaps="false"
+        android:fontFamily="@font/permanent_marker"
+        android:layout_marginTop="32dp"/>
+</LinearLayout>

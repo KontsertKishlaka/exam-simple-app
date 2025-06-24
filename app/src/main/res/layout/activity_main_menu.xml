@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_default"
+    android:padding="24dp">
+
+    <!-- Блок основных кнопок -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/profileButton"
+        android:layout_width="@dimen/btn_width_default"
+        android:layout_height="@dimen/btn_height_default"
+        android:layout_marginTop="170dp"
+        android:background="@drawable/button_bg_yellow"
+        android:fontFamily="@font/troubleside"
+        android:paddingBottom="@dimen/btn_padding_bottom_default"
+        android:text="@string/profile"
+        android:textColor="@color/btn_text_color_default"
+        android:textSize="@dimen/btn_text_size_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mediaButton"
+        android:layout_width="@dimen/btn_width_default"
+        android:layout_height="@dimen/btn_height_default"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_bg_yellow"
+        android:fontFamily="@font/troubleside"
+        android:paddingBottom="@dimen/btn_padding_bottom_default"
+        android:text="@string/media"
+        android:textColor="@color/btn_text_color_default"
+        android:textSize="@dimen/btn_text_size_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileButton" />
+
+    <!-- Блок кнопки выхода -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/randomNumberButton"
+        android:layout_width="@dimen/btn_width_default"
+        android:layout_height="@dimen/btn_height_default"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_bg_yellow"
+        android:fontFamily="@font/troubleside"
+        android:paddingBottom="@dimen/btn_padding_bottom_default"
+        android:text="@string/random_number"
+        android:textColor="@color/btn_text_color_default"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mediaButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/exitButton"
+        android:layout_width="@dimen/btn_width_default"
+        android:layout_height="@dimen/btn_height_default"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_bg_blue"
+        android:fontFamily="@font/troubleside"
+        android:paddingBottom="@dimen/btn_padding_bottom_default"
+        android:text="@string/exit"
+        android:textColor="@color/btn_text_color_default"
+        android:textSize="@dimen/btn_text_size_default"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/randomNumberButton"
+        app:layout_constraintVertical_bias="0.55" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

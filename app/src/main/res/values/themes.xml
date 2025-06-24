@@ -1,0 +1,7 @@
+<resources>
+    <style name="Base.Theme.Kvalexam" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/bg_color_default</item>
+    </style>
+
+    <style name="Theme.Kvalexam" parent="Base.Theme.Kvalexam" />
+</resources>
