@@ -1,58 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Текущее значение счетчика"
-        android:fontFamily="@font/permanent_marker"
-        android:layout_marginBottom="8dp"/>
+    android:background="@color/bg_color_default"
+    android:padding="24dp">
 
     <TextView
         android:id="@+id/counterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="24sp"
-        android:fontFamily="@font/permanent_marker"
-        android:layout_marginBottom="24dp"/>
+        android:fontFamily="@font/troubleside"
+        android:text="@string/counter_text"
+        android:textColor="@color/white"
+        android:textSize="108sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="377dp"
+        android:layout_height="290dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-        <Button
-            android:id="@+id/decrementButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="-"
-            android:textAllCaps="false"
-            android:fontFamily="@font/permanent_marker"
-            android:layout_marginEnd="16dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/getRandomNumberButton"
+            android:layout_width="189dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_bg_yellow"
+            android:fontFamily="@font/troubleside"
+            android:paddingBottom="@dimen/btn_padding_bottom_default"
+            android:text="@string/get_random_number"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/decrementButton" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/incrementButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+"
-            android:textAllCaps="false"
-            android:fontFamily="@font/permanent_marker"/>
-    </LinearLayout>
+            android:layout_width="189dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:background="@drawable/btn_bg_yellow"
+            android:fontFamily="@font/troubleside"
+            android:paddingBottom="@dimen/btn_padding_bottom_default"
+            android:text="@string/increment_btn_text"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/getRandomNumberButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Получить число"
-        android:textAllCaps="false"
-        android:fontFamily="@font/permanent_marker"
-        android:layout_marginTop="32dp"/>
-</LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/decrementButton"
+            android:layout_width="189dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_bg_yellow"
+            android:fontFamily="@font/troubleside"
+            android:paddingBottom="@dimen/btn_padding_bottom_default"
+            android:text="@string/decrement_btn_text"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/incrementButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

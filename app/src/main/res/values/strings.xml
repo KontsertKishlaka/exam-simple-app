@@ -10,4 +10,24 @@
     <string name="play">Пуск</string>
     <string name="pause">Пауза</string>
     <string name="stop">Стоп</string>
+    <string name="name">Имя</string>
+    <string name="profile_title">Мой профиль</string>
+    <string name="change_photo">Сменить фото</string>
+    <string name="name_hint">Введите ваше имя</string>
+    <string name="nickname">Никнейм</string>
+    <string name="nickname_hint">Придумайте никнейм</string>
+    <string name="birth_date">Дата рождения</string>
+    <string name="birth_date_hint">ДД.ММ.ГГГГ</string>
+    <string name="email">Email</string>
+    <string name="email_hint">example@mail.com</string>
+    <string name="save_profile">Сохранить профиль</string>
+    <string name="profile_photo_desc">Фото профиля</string>
+    <string name="current_counter_value">Текущее значение счетчика:</string>
+    <string name="counter_text">0</string>
+    <string name="decrement_btn_text">-</string>
+    <string name="increment_btn_text">+</string>
+    <string name="get_random_number">Получить число</string>
+    <string name="max_counter_text">9999</string>
+    <string name="random_number_range">Это случайное число\nмежду 0 и %d</string>
+    <string name="counter_zero_warning">Установите значение отличное от 0</string>
 </resources>

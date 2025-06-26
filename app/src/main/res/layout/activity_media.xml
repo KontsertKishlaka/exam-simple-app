@@ -7,9 +7,6 @@
     android:padding="24dp">
 
     <!-- Видео блок -->
-
-    <!-- Аудио блок -->
-
     <TextView
         android:id="@+id/videoLabel"
         android:layout_width="wrap_content"
@@ -32,11 +29,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/videoLabel" />
 
+    <!-- Кнопки для управления видео -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/videoView">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/playVideoButton"
+            android:layout_width="115dp"
+            android:layout_height="45dp"
+            android:background="@drawable/button_bg_blue"
+            android:fontFamily="@font/troubleside"
+            android:textSize="22sp"
+            android:text="@string/play"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/pauseVideoButton"
+            android:layout_width="115dp"
+            android:layout_height="45dp"
+            android:fontFamily="@font/troubleside"
+            android:textSize="22sp"
+            android:layout_marginStart="18dp"
+            android:background="@drawable/button_bg_blue"
+            android:text="@string/pause"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <!-- Аудио блок -->
+
     <TextView
         android:id="@+id/audioLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/troubleside"
         android:text="@string/audio"
         android:textColor="@color/white"
@@ -44,9 +76,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/videoView" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    <!-- Блок кнопок управления аудио -->
     <ProgressBar
         android:id="@+id/audioProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
@@ -61,13 +92,14 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/audioProgressBar">
 
+        <!-- Блок кнопок управления аудио -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/playButton"
             android:layout_width="189dp"

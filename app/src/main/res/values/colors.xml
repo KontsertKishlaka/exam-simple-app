@@ -6,4 +6,5 @@
     <color name="bg_color_splash_screen">#7711DD</color>
     <color name="btn_text_color_default">#FFFFFF</color>
     <color name="text_color_default">#000000</color>
+    <color name="hint_color">#80000000</color>
 </resources>

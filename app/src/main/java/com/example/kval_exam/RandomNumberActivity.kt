@@ -11,29 +11,38 @@ import kotlin.random.Random
 class RandomNumberActivity : AppCompatActivity() {
     private var counterValue = 0
 
+    /**
+     * Activity для генерации случайного числа в заданном диапазоне
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_random_number)
 
         updateCounterText()
 
-        // Обработчики кнопок
+        // Инициализация кнопок
+        initButtons()
+    }
+
+    private fun initButtons() {
+        // Кнопка увеличения значения
         findViewById<Button>(R.id.incrementButton).setOnClickListener {
             counterValue++
             updateCounterText()
         }
 
+        // Кнопка уменьшения значения
         findViewById<Button>(R.id.decrementButton).setOnClickListener {
-            if (counterValue > 0) counterValue--
+            counterValue--
             updateCounterText()
         }
 
+        // Кнопка генерации случайного числа
         findViewById<Button>(R.id.getRandomNumberButton).setOnClickListener {
-            if (counterValue > 0) {
-                val random = Random.nextInt(0, counterValue + 1)
-                showRandomNumber(random)
+            if (counterValue != 0) {
+                showRandomNumber()
             } else {
-                Toast.makeText(this, "Установите значение больше 0", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Установите значение отличное от 0", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -42,11 +51,16 @@ class RandomNumberActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.counterText).text = counterValue.toString()
     }
 
-    private fun showRandomNumber(randomNumber: Int) {
-        val intent = Intent(this, RandomNumberResultActivity::class.java).apply {
+    private fun showRandomNumber() {
+        val randomNumber = when {
+            counterValue > 0 -> Random.nextInt(0, counterValue + 1)
+            else -> Random.nextInt(counterValue, 1)
+        }
+
+        Intent(this, RandomNumberResultActivity::class.java).apply {
             putExtra("RANDOM_NUMBER", randomNumber)
             putExtra("MAX_VALUE", counterValue)
+            startActivity(this)
         }
-        startActivity(intent)
     }
 }
