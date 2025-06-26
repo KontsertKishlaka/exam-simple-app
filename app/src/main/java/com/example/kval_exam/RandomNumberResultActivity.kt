@@ -4,6 +4,13 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Экран отображения результата генерации случайного числа.
+ *
+ * Показывает:
+ * - Диапазон, из которого было выбрано число
+ * - Сгенерированное число
+ */
 class RandomNumberResultActivity : AppCompatActivity() {
     /**
      * Activity для отображения случайного числа и диапазона

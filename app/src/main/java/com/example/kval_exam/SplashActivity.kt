@@ -6,15 +6,26 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Activity для отображения splash-экрана при запуске приложения.
+ * Автоматически переходит в MainMenuActivity после короткой задержки.
+ */
 class SplashActivity : AppCompatActivity() {
+
+    private val splashDelayMs = 1500L
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // Через 1.5 секунды переходим в основное меню
-        Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainMenuActivity::class.java))
-            finish()
-        }, 1500)
+        Handler(Looper.getMainLooper()).postDelayed(
+            { navigateToMainMenu() },
+            splashDelayMs
+        )
+    }
+
+    private fun navigateToMainMenu() {
+        startActivity(Intent(this, MainMenuActivity::class.java))
+        finish()
     }
 }

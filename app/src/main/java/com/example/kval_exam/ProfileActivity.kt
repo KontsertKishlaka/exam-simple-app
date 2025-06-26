@@ -18,11 +18,27 @@ import java.io.File
 import java.io.FileOutputStream
 import androidx.core.content.edit
 
+/**
+ * Экран профиля пользователя с возможностью редактирования данных.
+ *
+ * Сохраняет данные:
+ * - Имя, никнейм, дата рождения, email
+ * - Фотография профиля (из галереи устройства)
+ *
+ * Использует SharedPreferences для хранения текстовых данных
+ * и внутреннее хранилище для изображений.
+ */
 class ProfileActivity : AppCompatActivity() {
+
+    companion object {
+        private const val PREFS_NAME = "profile_prefs"
+        private const val IMAGE_FILE_NAME = "profile_image.jpg"
+        private const val MAX_IMAGE_SIZE = 500 // px
+    }
 
     private lateinit var prefs: SharedPreferences
     private lateinit var profileImage: ImageView
-    private val imageFile by lazy { File(filesDir, "profile_image.jpg") }
+    private val imageFile by lazy { File(filesDir, IMAGE_FILE_NAME) }
 
     private val getContent = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
@@ -43,7 +59,7 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        prefs = getSharedPreferences("profile_prefs", MODE_PRIVATE)
+        prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
         profileImage = findViewById(R.id.profileImage)
 
         loadProfileData()
@@ -100,7 +116,7 @@ class ProfileActivity : AppCompatActivity() {
         inputStream?.close()
 
         // Вычисляем коэффициент масштабирования
-        val scaleFactor = calculateInSampleSize(options, 500, 500)
+        val scaleFactor = calculateInSampleSize(options, MAX_IMAGE_SIZE, MAX_IMAGE_SIZE)
 
         val newOptions = BitmapFactory.Options().apply {
             inSampleSize = scaleFactor

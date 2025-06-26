@@ -11,6 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.net.toUri
 
+/**
+ * Медиаплеер для воспроизведения аудио и видео.
+ *
+ * Функционал:
+ * - Воспроизведение/пауза видео
+ * - Воспроизведение/пауза/остановка аудио
+ * - Прогресс-бар для аудио
+ */
 class MediaActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private lateinit var videoView: VideoView

@@ -8,12 +8,17 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 
+/**
+ * Генератор случайных чисел в заданном диапазоне.
+ *
+ * Позволяет:
+ * - Устанавливать верхнюю границу диапазона (счетчик)
+ * - Генерировать случайное число от 0 до установленного значения
+ * - Показывать результат в отдельном экране
+ */
 class RandomNumberActivity : AppCompatActivity() {
     private var counterValue = 0
 
-    /**
-     * Activity для генерации случайного числа в заданном диапазоне
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_random_number)

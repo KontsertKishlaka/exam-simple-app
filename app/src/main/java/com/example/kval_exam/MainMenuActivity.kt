@@ -5,6 +5,15 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Главное меню приложения с навигацией по основным функциям.
+ *
+ * Содержит кнопки для перехода:
+ * - Профиль пользователя
+ * - Медиаплеер
+ * - Генератор случайных чисел
+ * - Выход из приложения
+ */
 class MainMenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
