@@ -2,10 +2,10 @@ package com.example.kval_exam
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import kotlin.random.Random
 
 /**
@@ -31,19 +31,19 @@ class RandomNumberActivity : AppCompatActivity() {
 
     private fun initButtons() {
         // Кнопка увеличения значения
-        findViewById<Button>(R.id.incrementButton).setOnClickListener {
+        findViewById<AppCompatButton>(R.id.incrementButton).setOnClickListener {
             counterValue++
             updateCounterText()
         }
 
         // Кнопка уменьшения значения
-        findViewById<Button>(R.id.decrementButton).setOnClickListener {
+        findViewById<AppCompatButton>(R.id.decrementButton).setOnClickListener {
             counterValue--
             updateCounterText()
         }
 
         // Кнопка генерации случайного числа
-        findViewById<Button>(R.id.getRandomNumberButton).setOnClickListener {
+        findViewById<AppCompatButton>(R.id.getRandomNumberButton).setOnClickListener {
             if (counterValue != 0) {
                 showRandomNumber()
             } else {

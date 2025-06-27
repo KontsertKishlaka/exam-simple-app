@@ -2,8 +2,8 @@ package com.example.kval_exam
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 
 /**
  * Главное меню приложения с навигацией по основным функциям.
@@ -20,19 +20,19 @@ class MainMenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main_menu)
 
         // Обработчики кнопок
-        findViewById<Button>(R.id.profileButton).setOnClickListener {
+        findViewById<AppCompatButton>(R.id.profileButton).setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
 
-        findViewById<Button>(R.id.mediaButton).setOnClickListener {
+        findViewById<AppCompatButton>(R.id.mediaButton).setOnClickListener {
             startActivity(Intent(this, MediaActivity::class.java))
         }
 
-        findViewById<Button>(R.id.randomNumberButton).setOnClickListener {
+        findViewById<AppCompatButton>(R.id.randomNumberButton).setOnClickListener {
             startActivity(Intent(this, RandomNumberActivity::class.java))
         }
 
-        findViewById<Button>(R.id.exitButton).setOnClickListener {
+        findViewById<AppCompatButton>(R.id.exitButton).setOnClickListener {
             finish()
         }
     }

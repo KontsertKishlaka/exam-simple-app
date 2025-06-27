@@ -8,11 +8,11 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.widget.addTextChangedListener
 import java.io.File
 import java.io.FileOutputStream
@@ -68,10 +68,10 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun loadProfileData() {
         // Загрузка текстовых данных
-        findViewById<EditText>(R.id.nameEditText).setText(prefs.getString("name", ""))
-        findViewById<EditText>(R.id.nickEditText).setText(prefs.getString("nick", ""))
-        findViewById<EditText>(R.id.birthDateEditText).setText(prefs.getString("birth_date", ""))
-        findViewById<EditText>(R.id.emailEditText).setText(prefs.getString("email", ""))
+        findViewById<AppCompatEditText>(R.id.nameEditText).setText(prefs.getString("name", ""))
+        findViewById<AppCompatEditText>(R.id.nickEditText).setText(prefs.getString("nick", ""))
+        findViewById<AppCompatEditText>(R.id.birthDateEditText).setText(prefs.getString("birth_date", ""))
+        findViewById<AppCompatEditText>(R.id.emailEditText).setText(prefs.getString("email", ""))
 
         // Загрузка изображения
         if (prefs.getBoolean("has_profile_image", false) && imageFile.exists()) {
@@ -90,19 +90,19 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         // Слушатели изменений текста
-        findViewById<EditText>(R.id.nameEditText).addTextChangedListener {
+        findViewById<AppCompatEditText>(R.id.nameEditText).addTextChangedListener {
             it?.toString()?.let { text -> prefs.edit { putString("name", text) } }
         }
 
-        findViewById<EditText>(R.id.nickEditText).addTextChangedListener {
+        findViewById<AppCompatEditText>(R.id.nickEditText).addTextChangedListener {
             it?.toString()?.let { text -> prefs.edit { putString("nick", text) } }
         }
 
-        findViewById<EditText>(R.id.birthDateEditText).addTextChangedListener {
+        findViewById<AppCompatEditText>(R.id.birthDateEditText).addTextChangedListener {
             it?.toString()?.let { text -> prefs.edit { putString("birth_date", text) } }
         }
 
-        findViewById<EditText>(R.id.emailEditText).addTextChangedListener {
+        findViewById<AppCompatEditText>(R.id.emailEditText).addTextChangedListener {
             it?.toString()?.let { text -> prefs.edit { putString("email", text) } }
         }
     }
